@@ -32,9 +32,10 @@ InvisiSpec: Making Speculative Execution Invisible in the Cache Hierarchy
 * a generalization of speculative execution attacks where any speculative load may pose a threat
 * Under TSO, using fences to defend against Spectre attacks slows down execution by 74% relative to a conventional, insecure processor; InvisiSpec reduces the execution slowdown to only 21%
 * Using fences to defend against futuristic attacks slows down execution by 208%; InvisiSpec reduces the slowdown to 72%
+***
 
 ### Efficient Invisible Speculative Execution through Selective Delay and Value Prediction
-ISCA '19  
+ISCA 2019  
 Efficient Invisible Speculative Execution through Selective Delay and Value Prediction
 * delay speculative loads until they are non-speculative, preventing any speculative side-effects from happening
 * limit the eager delay solution only to loads that miss in the L1 cache
@@ -48,6 +49,63 @@ CleanupSpec: An “Undo” Approach to Safe Speculation
 * Invalidate changes to the Randomized L2/LLC.
 * Randomize replacement policy for L1.
 * Delay changes to coherence state in remote cache.
+***
+
+### MI6
+MICRO 2019  
+MI6: Secure Enclaves in a Speculative Out-of-Order Processor
+* there are many subtle side channels associated
+with queues and associated arbitration required to handle
+multiple outstanding memory requests in the memory hierarchy
+* describe how to enforce strong isolation in such systems
+* by using a new purge instruction, the complexity of the out-of-order processor core can be completely decoupled from the complexity of a modern memory hierarchy
+* optimizations based on indistinguishability to software in our purge implementation
+* key modifications to the security monitor to maintain strong isolation in a speculative processor
+* an optimization relating to access permissions checking
+* security comes at the cost of approximately 16.4% average slowdown for protected programs
+***
+
+### NDA
+MICRO 2019  
+NDA: Preventing Speculative Execution Attacks at Their Source
+* introduce a speculative-execution-attack taxonomy based on how attacks induce wrong-path execution
+* NDA, a new technique to control speculative data propagation in out-of-order processors to defeat speculative execution attacks
+* multiple variants with differing security/performance tradeoffs
+***
+
+### Speculative Taint Tracking
+MICRO 2019  
+Speculative Taint Tracking (STT): A Comprehensive Protection
+for Speculatively Accessed Data
+* open source https://github.com/cwfletcher/stt
+* provide a comprehensive study of covert channels on
+speculative microarchitectures
+* propose a general framework for preventing speculatively accessed data from leaking over any covert channel
+* propose a novel scheme to quickly disable protection on
+flows of data, once the data’s producer access instruction(s)
+becomes non-speculative
+* it adds only 8.5%/14.5% overhead
+***
+
+### SPECCFI
+SP 2020  
+SPECCFI: Mitigating Spectre Attacks using CFI Informed Speculation
+* present a new defense against Spectre variants that rely on polluting the BTB and RSB, by embedding CFI principles into the branch prediction decisions
+* it leads to little overhead
+***
+
+### SpecShield
+PACT 2019  
+SpecShield: Shielding Speculative Data from Microarchitectural Covert Channels
+* Proposes a microarchitectural framework for eliminating transient execution attacks which grant access to arbitrary memory
+* the first general solution addressing speculative data-flow within the pipeline
+***
+
+### 
+DAC2019 SafeSpec
+SafeSpec: Banishing the Spectre of a Meltdown with Leakage-Free Speculation
+* separating speculative state into separate structures
+* identify a new class of speculative attacks (Transient Speculation Attacks)
 
 <!-- ### Foreshadow
 USENIX‘18  
