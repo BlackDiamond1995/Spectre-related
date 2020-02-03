@@ -142,4 +142,4 @@ BranchScope: A New Side-Channel Attack on Directional Branch Predictor
 * the first fine-grained attack on the directional branch predictor
 * BranchScope is not affected by defenses against BTB-based attacks.
 * BranchScope works reliably and efficiently from user space across three generations of Intel processors in the presence of system noise.
-* Providing branch prediction units that are secure to side channel attacks. 123-->
+* Providing branch prediction units that are secure to side channel attacks. 123 -->
