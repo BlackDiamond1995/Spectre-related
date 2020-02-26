@@ -7,6 +7,7 @@
     -  store the 𝑁 most recent return addresses
 - ROB: Redorder Buffer
     - 乱序执行时，暂存未定指令的执行结果
+    - on Intel’s Skylake has space for 224 micro-ops, or about 200 instructions for typical code
 - BHB: Branch History Buffer
     - 存储最近29次branch
 - 上述表是进程无关的
